@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h3 {
+            color: midnightblue;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            border-radius: 8px;
+            color: midnightblue;
+            background-color: rgb(119, 183, 240);
+        }
+
+        .container {
+            position: absolute;
+            height: 300px;
+            width: 250px;
+            border-radius: 15px;
+            background-color: aliceblue;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        input{
+            padding: 8px;
+            border: none;
+        }
+
+        textarea{
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Write new chat..</h3>
+    <form action="/chats" method="POST">
+        <div class="container">
+            <input type="text" name="from" placeholder="From" required />
+            <br>
+            <br>
+            <input type="text" name="to" placeholder="To" required />
+            <br>
+            <br>
+            <textarea name="msg" placeholder="Message" required></textarea>
+            <br>
+            <br>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+</body>
+
+</html>
